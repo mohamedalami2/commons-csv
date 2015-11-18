@@ -1,4 +1,20 @@
+machine:
+  php:
+    version: 5.5.11
+  node:
+    version: 0.10.28
+
+    dependencies:
+  override:
+  <dependency>
+  <groupId>org.apache.commons</groupId>
+  <artifactId>commons-csv</artifactId>
+  <version>1.2</version>
+</dependency>
+
 test:
  post:
    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+   
+   
